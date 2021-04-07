@@ -3,16 +3,19 @@ rm ./test1
 gcc main.c -o test1
 
 function func(){
+input=$(<data1/input.txt)
 ./test1 << EOF
-1
+$input
 EOF
 }
 
-result=$(func input)
+result=$(func)
 
 if test $result -eq 2
 then
-    echo 'success'
+    echo 'test1 success'
+    exit 0
 else
+    echo 'test2 failed'
     exit 1
 fi
