@@ -11,11 +11,14 @@ EOF
 
 result=$(func)
 
+git log --oneline -n 1 | cut -d ' ' -f 1  >>log.txt
+
 if test $result -eq 2
 then
-    echo 'test1 success'
+    echo 'test1 success'>>log.txt
     exit 0
 else
-    echo 'test2 failed'
+    echo 'test2 failed'>>log.txt
+    echo $id
     exit 1
 fi
