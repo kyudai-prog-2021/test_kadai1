@@ -10,15 +10,26 @@ EOF
 }
 
 result=$(func)
-
+if test $1 -ne 1
+    then
 git log --oneline -n 1 | cut -d ' ' -f 1  >>log.txt
+fi
 
 if test $result -eq 2
 then
-    echo 'test1 success'>>log.txt
+    if test $1 -eq 1
+    then
+        echo 'test1 success'
+    else 
+        echo 'test1 success'>>log.txt
+    fi
     exit 0
 else
-    echo 'test2 failed'>>log.txt
-    echo $id
+    if test $1 -eq 1
+    then
+        echo 'test1 failed'
+    else 
+        echo 'test1 failed'>>log.txt
+    fi
     exit 1
 fi

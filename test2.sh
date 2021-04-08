@@ -13,9 +13,19 @@ result=$(func)
 
 if test $result -eq 2
 then
-    echo 'test2 success'>>log.txt
+    if test $1 -eq 1
+    then
+        echo 'test2 success'
+    else 
+        echo 'test2 success'>>log.txt
+    fi
     exit 0
 else
-    echo 'test2 failed'>>log.txt
+    if test $1 -eq 1
+    then
+        echo 'test2 failed'
+    else 
+        echo 'test2 failed'>>log.txt
+    fi
     exit 1
 fi
