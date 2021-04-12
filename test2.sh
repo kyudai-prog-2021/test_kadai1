@@ -11,21 +11,11 @@ EOF
 
 result=$(func)
 
-if test $result -eq 2
+if test $result -eq 4
 then
-    if test $1 -eq 1
-    then
-        echo 'test2 success'
-    else 
-        echo 'test2 success'>>log.txt
-    fi
+    echo 'test2 success'
     exit 0
 else
-    if test $1 -eq 1
-    then
-        echo 'test2 failed'
-    else 
-        echo 'test2 failed'>>log.txt
-    fi
+    echo 'test2 failed' 
     exit 1
 fi
